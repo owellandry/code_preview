@@ -21,7 +21,7 @@ const Callback = () => {
         // Aquí puedes guardar el token en el estado global de la aplicación o en una cookie, según tus necesidades.
 
         // Luego, redirige al usuario a la página de inicio o a la ruta deseada.
-        window.location.href = '/inicio'; // Cambia '/inicio' por la ruta a la que deseas redirigir al usuario después del inicio de sesión.
+        window.location.href = '/index'; // Cambia '/inicio' por la ruta a la que deseas redirigir al usuario después del inicio de sesión.
       })
       .catch((error) => {
         console.error('Error al obtener el token de acceso:', error);
