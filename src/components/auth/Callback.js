@@ -19,9 +19,11 @@ const Callback = () => {
         const token = response.data.access_token;
 
         // Aquí puedes guardar el token en el estado global de la aplicación o en una cookie, según tus necesidades.
+        // Por ejemplo, para almacenarlo en el estado global de la aplicación (con React Context):
+        // MiContextoAlmacenamiento.setToken(token);
 
         // Luego, redirige al usuario a la página de inicio o a la ruta deseada.
-        navigate('/inicio');
+        navigate('/inicio'); // Cambia '/index' por '/inicio' si deseas redirigir al componente 'Home'.
       })
       .catch((error) => {
         console.error('Error al obtener el token de acceso:', error);
