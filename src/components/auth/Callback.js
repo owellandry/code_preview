@@ -21,7 +21,7 @@ const Callback = () => {
         // Aquí puedes guardar el token en el estado global de la aplicación o en una cookie, según tus necesidades.
 
         // Luego, redirige al usuario a la página de inicio o a la ruta deseada.
-        navigate('/index');
+        navigate('/inicio');
       })
       .catch((error) => {
         console.error('Error al obtener el token de acceso:', error);
