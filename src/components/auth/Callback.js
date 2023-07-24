@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
+import Login from '../Login'; // Ajusta la ruta de importación del componente Login
+import Home from '../Home/Home'; // Ajusta la ruta de importación del componente Home
 
 const Callback = () => {
   useEffect(() => {
@@ -8,7 +10,7 @@ const Callback = () => {
 
     // Intercambia el código de autorización por un token de acceso desde el servidor
     axios
-      .post('URL_DEL_SERVIDOR_PARA_OBTENER_EL_TOKEN', {
+      .post('https://github.com/login/oauth/access_token', {
         code,
         client_id: '04fb02454ab303b6b803',
         client_secret: 'b43acb567d8e3b82704c8e3a10ad2d85017631e6',
