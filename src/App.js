@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './components/Login';
-import Callback from './components/auth/Callback';
+import Callback from './Callback';
 import Home from './components/Home/Home';
 import './App.css';
 
