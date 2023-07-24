@@ -9,7 +9,6 @@ const Callback = () => {
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get('code');
 
-    // Intercambia el código de autorización por un token de acceso desde el servidor
     axios
       .post('https://github.com/login/oauth/access_token', {
         code,
