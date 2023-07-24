@@ -1,17 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Login from './components/Login';
-import Callback from './components/auth/Callback';
-import Home from './components/Home/Home';
-import './App.css';
+import Index from './components/Index';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/callback" element={<Callback />} />
-        <Route path="/inicio" element={<Home />} />
+        <Route path="/" element={<Index />} />
       </Routes>
     </Router>
   );
