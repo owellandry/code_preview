@@ -14,17 +14,15 @@ const Register = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Aquí realizamos la solicitud HTTP para registrar al usuario en el backend
-    axios
-      .post('/api/register', formData) // Cambiar la ruta '/api/register' por la ruta real del backend
-      .then((response) => {
-        console.log(response.data); // Podemos mostrar un mensaje de éxito o redirigir al usuario a la página de inicio de sesión
-      })
-      .catch((error) => {
-        console.error('Error al registrar usuario:', error);
-      });
+    try {
+      // Aquí realizamos la solicitud HTTP para registrar al usuario en el backend
+      const response = await axios.post('/api/register', formData); // Ajustar la ruta '/api/register' según la ruta real del backend
+      console.log(response.data); // Podemos mostrar un mensaje de éxito o redirigir al usuario a la página de inicio de sesión
+    } catch (error) {
+      console.error('Error al registrar usuario:', error);
+    }
   };
 
   return (
@@ -34,15 +32,36 @@ const Register = () => {
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="username">Nombre de Usuario:</label>
-            <input type="text" id="username" name="username" value={formData.username} onChange={handleChange} required />
+            <input
+              type="text"
+              id="username"
+              name="username"
+              value={formData.username}
+              onChange={handleChange}
+              required
+            />
           </div>
           <div className="form-group">
             <label htmlFor="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
           </div>
           <div className="form-group">
             <label htmlFor="password">Contraseña:</label>
-            <input type="password" id="password" name="password" value={formData.password} onChange={handleChange} required />
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
           </div>
           <button type="submit">Registrarse</button>
         </form>
